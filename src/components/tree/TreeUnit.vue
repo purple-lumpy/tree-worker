@@ -1,33 +1,34 @@
 <template>
     <div class="wrapper">
         <p
-                v-if="!isLeaf"
-                class="gt"
-                :class="{open: shouldOpen, close: !firstTimeTag && !shouldOpen}"
-                @click="handleOpenClick"
+            v-if="!isLeaf"
+            class="gt"
+            :class="{open: shouldOpen, close: !firstTimeTag && !shouldOpen}"
+            @click="handleOpenClick"
         >
             &gt;
         </p>
 
         <input
-                type="checkbox"
-                :checked="realChecked"
-                @change="handleCheckChange"
+            type="checkbox"
+            :checked="realChecked"
+            @change="handleCheckChange"
         />
 
         <label
-                v-show="!editTitle"
-                @dblclick="handleTitleDoubleClick"
-                title="双击更改节点名称"
+            v-show="!editTitle"
+            @dblclick="handleTitleDoubleClick"
+            title="双击更改节点名称"
         >
             {{myTitle}}
         </label>
 
         <input
-                v-show="editTitle"
-                autofocus type="text"
-                v-model="myTitle"
-                @blur="handleInputBlur"
+            v-show="editTitle"
+            autofocus
+            type="text"
+            v-model="myTitle"
+            @blur="handleInputBlur"
         />
     </div>
 </template>

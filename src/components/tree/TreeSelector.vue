@@ -1,17 +1,17 @@
 <template>
     <div>
         <TreeComp
-                :is-root="isRoot"
-                :is-leaf="isLeaf"
-                v-show="nodesData.title && nodesData.id"
-                :nodeId="nodesData.id"
-                :nodeTitle="nodesData.title"
-                :nodeChildren="nodesData.children"
-                :checkBoxStraight="checkBoxValue"
-                @addNode="handleAddNode"
-                @removeNode="handleRemoveNode"
-                @checkBoxChange="handleCheckBoxChange"
-                @changeNodeTitle="handleChangeNodeTitle"
+            :is-root="isRoot"
+            :is-leaf="isLeaf"
+            v-show="nodesData.title && nodesData.id"
+            :nodeId="nodesData.id"
+            :nodeTitle="nodesData.title"
+            :nodeChildren="nodesData.children"
+            :checkBoxStraight="checkBoxValue"
+            @addNode="handleAddNode"
+            @removeNode="handleRemoveNode"
+            @checkBoxChange="handleCheckBoxChange"
+            @changeNodeTitle="handleChangeNodeTitle"
         >
         </TreeComp>
     </div>

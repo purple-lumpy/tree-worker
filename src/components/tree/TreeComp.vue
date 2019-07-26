@@ -2,16 +2,16 @@
     <div>
         <div>
             <TreeUnit
-                    :node-id="nodeId"
-                    :node-title="nodeTitle"
-                    :isRoot="isRoot"
-                    :is-leaf="isLeaf"
-                    :shouldCheck="checkBoxStraight"
-                    @openPannel="handleOpenPannel"
-                    @addNode="handleAddNode"
-                    @removeNode="handleRemoveNode"
-                    @checkboxChange="handleCheckBoxChange"
-                    @changeNodeTitle="handleChangeNodeTitle"
+                :node-id="nodeId"
+                :node-title="nodeTitle"
+                :isRoot="isRoot"
+                :is-leaf="isLeaf"
+                :shouldCheck="checkBoxStraight"
+                @openPannel="handleOpenPannel"
+                @addNode="handleAddNode"
+                @removeNode="handleRemoveNode"
+                @checkboxChange="handleCheckBoxChange"
+                @changeNodeTitle="handleChangeNodeTitle"
             />
 
             <div class="operations">
@@ -26,22 +26,22 @@
 
         <div v-if="!isLeaf">
             <div
-                    class="pannel"
-                    v-for="child in showChildren"
-                    :key="child.id"
-                    :class="{open: showPannel, close: !showPannel}"
+                class="pannel"
+                v-for="child in showChildren"
+                :key="child.id"
+                :class="{open: showPannel, close: !showPannel}"
             >
                 <TreeSelector
-                        :isRoot="false"
-                        :myData="child"
-                        :checkBoxValue="checkBoxValue"
+                    :isRoot="false"
+                    :myData="child"
+                    :checkBoxValue="checkBoxValue"
                 />
             </div>
             <div
-                    class="show-more"
-                    :class="{open: showPannel, close: !showPannel}"
-                    v-show="haveDisplayChild"
-                    @click="handleShowMoreChildren"
+                class="show-more"
+                :class="{open: showPannel, close: !showPannel}"
+                v-show="haveDisplayChild"
+                @click="handleShowMoreChildren"
             >
                 more
             </div>
